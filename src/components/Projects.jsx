@@ -17,7 +17,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
         >
             <Tilt
                 options={{
-                    max: 45,
+                    max: 25,
                     scale: 1,
                     speed: 450
                 }}
@@ -29,7 +29,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                         alt={name}
                         className="w-full h-full object-cover rounded-2xl"
                     />
-                    <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+                    <div className="absolute top-0 right-0 p-3 flex flex-col gap-2">
                         <div
                             onClick={() => window.open(source_code_link, "_blank")}
                             className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -42,12 +42,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                         </div>
                         <div
                             onClick={() => window.open(demo_link, "_blank")}
-                            className="bg-secondary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                            className="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                         >
                             <img
                                 src={demo}
                                 alt="demo"
-                                className="scale-150 object-contain"
+                                className="w-full h-full object-contain"
                             />
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                         {tags.map((tag, index) => (
-                            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                            <p key={index} className={`text-[14px] ${tag.color}`}>
                                 #{tag.name}
                             </p>
                         ))}
@@ -68,11 +68,10 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                 </div>
             </Tilt>
         </motion.div>
-    )
+    );
 }
 
 const Projects = () => {
-
     const [filteredProjects, setFilteredProjects] = useState(projects);
     const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -99,7 +98,7 @@ const Projects = () => {
                 animate="show"
             >
                 <p className={`${styles.sectionSubText} text-secondary`}>My Projects</p>
-                <h2 className={`${styles.sectionHeadText} text-accent`}>Projects.</h2> <br/>
+                <h2 className={`${styles.sectionHeadText} text-accent`}>Projects.</h2> <br />
             </motion.div>
 
             <div className="w-full h-full">
@@ -110,27 +109,26 @@ const Projects = () => {
                     className="mt-3 mb-10 font-semibold text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
                 >
                     The following projects highlight my skills and experience through practical examples of my work. Each project includes a brief description, along with links to code repositories and live demos. They demonstrate my ability to tackle complex problems, work with various technologies, and manage projects effectively.
-          </motion.p>
-        </div>
+                </motion.p>
+            </div>
 
-          <Buttons
-              categories={categories}
-              filterProjects={filterProjects}
-              selectedCategory={selectedCategory}
-          />
+            <Buttons
+                categories={categories}
+                filterProjects={filterProjects}
+                selectedCategory={selectedCategory}
+            />
 
-        <div className="mt-10 flex flex-wrap gap-8">
-          {filteredProjects.map((project,index) => (
-              <ProjectCard
-                  key={`project-${index}`}
-                  index={index}
-                  {...project}
-              />
-          ))}
-        </div>
-
-      </>
-  )
+            <div className="mt-10 flex flex-wrap gap-8">
+                {filteredProjects.map((project, index) => (
+                    <ProjectCard
+                        key={`project-${index}`}
+                        index={index}
+                        {...project}
+                    />
+                ))}
+            </div>
+        </>
+    );
 }
 
-export default SectionWrapper(Projects, "projects")
+export default SectionWrapper(Projects, "projects");
