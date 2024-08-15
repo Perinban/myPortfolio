@@ -21,15 +21,15 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                     scale: 1,
                     speed: 450
                 }}
-                className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col"
+                className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[600px] flex flex-col"
             >
-                <div className="relative w-full h-[230px]">
+                <div className="relative w-full h-full">
                     <img
                         src={image}
                         alt={name}
                         className="w-full h-full object-cover rounded-2xl"
                     />
-                    <div className="absolute top-0 right-0 p-3 flex flex-col gap-2">
+                    <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
                         <div
                             onClick={() => window.open(source_code_link, "_blank")}
                             className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -42,12 +42,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                         </div>
                         <div
                             onClick={() => window.open(demo_link, "_blank")}
-                            className="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                            className="-m-1 pl-1 w-12 h-12 flex rounded-full justify-center items-center cursor-pointer"
                         >
                             <img
                                 src={demo}
                                 alt="demo"
-                                className="w-full h-full object-contain"
+                                className="w-full h-full scale-150 object-contain"
                             />
                         </div>
                     </div>
