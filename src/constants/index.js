@@ -120,10 +120,6 @@ const professional_technologies = [
     {
         name: "BitBucket",
         icon: bitbucket,
-    },
-    {
-        name: "ECC",
-        icon: ecc,
     }
 ];
 
@@ -137,28 +133,12 @@ const other_technologies = [
         icon: tableau,
     },
     {
-        name: "HTML 5",
-        icon: html,
-    },
-    {
-        name: "CSS 3",
-        icon: css,
-    },
-    {
         name: "Docker",
         icon: docker,
     },
     {
-        name: "JavaScript",
-        icon: javascript,
-    },
-    {
         name: "React JS",
         icon: reactjs,
-    },
-    {
-        name: "Tailwind CSS",
-        icon: tailwind,
     },
     {
         name: "Microsoft Azure",
