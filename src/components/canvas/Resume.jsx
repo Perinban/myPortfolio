@@ -1,11 +1,10 @@
 import { saveAs } from 'file-saver';
-import { cv } from '../../assets';
 import { motion } from 'framer-motion';
 
 const ResumeCanvas = () => {
-
     const downloadPdf = async () => {
-        const response = await fetch(cv);
+        const pdfUrl = "https://media.licdn.com/dms/document/media/v2/D562DAQHnZMKYkNtyIg/profile-treasury-document-pdf-analyzed/B56ZWj6XJuHEAc-/0/1742211753118?e=1743638400&v=beta&t=mlqK6Aat7KVjQQ3QbdXxdUAF70m6ZyDJxW_i8G5A8Rs";
+        const response = await fetch(pdfUrl);
         const blob = await response.blob();
         saveAs(blob, 'cv.pdf');
     };

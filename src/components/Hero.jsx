@@ -91,20 +91,21 @@ const Hero = () => {
                     initial="hidden"
                     animate="show"
                     variants={zoomIn(0.4, 1)}
-                    className="flex flex-grow items-center justify-center mt-10 lg:mt-0 relative z-10"
+                    className="flex flex-grow items-center justify-center mt-10 lg:mt-0 relative z-10 h-full bg-cover bg-center"
                 >
                     <motion.div
-                        className="w-60 md:w-80 h-60 md:h-80 border-4 border-supplementary bg-supplementary flex items-center justify-center"
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+                        className="w-60 md:w-80 h-60 md:h-80 border-4 border-supplementary bg-supplementary rounded-lg shadow-lg transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+                        animate={{scale: [1, 1.05, 1]}}
+                        transition={{duration: 2, repeat: Infinity, repeatType: 'reverse'}}
                     >
                         <img
                             src={profileImage}
                             alt="Profile"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover rounded-lg"
                         />
                     </motion.div>
                 </motion.div>
+
             </motion.div>
 
             <motion.div
