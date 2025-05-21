@@ -21,6 +21,8 @@ import {
         reactjs,
         rlm,
         tailwind,
+        talentbliss,
+        reviewxtract,
         azure,
         tableau,
         best11,
@@ -253,9 +255,9 @@ const projects = [
         category: "Data Wrangling, Data Visualisation",
     },
     {
-        name: "Stock Market Analysis on DAX Companies",
+        name: "Stock Market Analysis",
         description:
-            "This project focuses on examining the variances in the stock market performance among DAX companies over a three-year period.",
+            "This project focuses on examining the variances in the stock market performance among companies over a three-year period.",
         tags: [
             {
                 "name": "python",
@@ -298,6 +300,76 @@ const projects = [
         source_code_link: "https://github.com/Perinban/Stock-Market-Analysis-DAX",
         demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/StockAnalysisonDAXCompanies/Closing_Price",
         category: "Data Wrangling, Data Visualisation",
+    },
+    {
+        name: "TalentBliss",
+        description:
+            "This project is a job portal designed to facilitate job searches.",
+        tags: [
+            {
+                "name": "react",
+                "color": "text-yellow-500"
+            },
+            {
+                "name": "vue",
+                "color": "text-teal-400"
+            },
+            {
+                "name": "tailwind",
+                "color": "text-pink-400"
+            },
+            {
+                "name": "supabase",
+                "color": "text-sky-400"
+            },
+            {
+                "name": "clerk",
+                "color": "text-teal-400"
+            },
+        ],
+        image: talentbliss,
+        source_code_link: "https://github.com/Perinban/TalentBliss",
+        demo_link: "https://perinban.github.io/TalentBliss/",
+        category: "Javascript",
+    },
+    {
+        name: "ReviewXtract",
+        description:
+            "This project is a job portal designed to facilitate job searches.",
+        tags: [
+            {
+                "name": "python",
+                "color": "text-yellow-500"
+            },
+            {
+                "name": "lda",
+                "color": "text-teal-400"
+            },
+            {
+                "name": "flipkart",
+                "color": "text-pink-400"
+            },
+            {
+                "name": "scikit-learn",
+                "color": "text-emerald-300"
+            },
+            {
+                "name": "matplotlib",
+                "color": "text-cyan-400"
+            },
+            {
+                "name": "seaborn",
+                "color": "text-blue-400"
+            },
+            {
+                "name": "random forest",
+                "color": "text-teal-300"
+            },
+        ],
+        image: reviewxtract,
+        source_code_link: "https://github.com/Perinban/ReviewXtract/",
+        demo_link: "https://github.com/Perinban/ReviewXtract/",
+        category: "Data Wrangling, Data Visualisation, Machine Learning, Marketing Analytics",
     },
     {
         name: "Indian Weather Analysis",
@@ -438,7 +510,7 @@ const projects = [
         source_code_link: "https://github.com/Perinban/simple-linear-regression-ml/",
         demo_link: "https://drawsql.app/teams/de-28/diagrams/de",
         category: "Normalization",
-    },
+    }
 ];
 
 export { professional_technologies, other_technologies, open_roles, journeys, projects  };

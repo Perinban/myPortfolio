@@ -48,11 +48,7 @@ const About = () => {
                 variants={fadeIn("", "", 0.1, 1)}
                 className="mt-4 text-secondary font-semibold text-[16px] sm:text-[17px] max-w-3xl leading-[26px] sm:leading-[30px] text-justify"
             >
-                I am a motivated ETL Developer with 5.9 years of experience, currently pursuing a master's in data science,
-                specializing professionally in Ab Initio environments. Leveraging expertise in GDE, Control Center,
-                Conduct IT (Plans), Express IT, and TRW to optimize project efficiency. Demonstrated success in managing
-                requirements, defects, and scheduled jobs. Proficient in Korn shell scripting and Oracle SQL. Adept at
-                navigating diverse needs within Agile and Waterfall SDLCs.
+                Data engineer with 6 years of ETL development experience, driven to expand expertise through a Master's degree in Data Science. Specializing in Ab Initio environments, I leverage my expertise in GDE, Control Center, Conduct IT Plans, Express IT, TRW, Korn Shell Scripting and Oracle SQL to optimize project efficiency. Skilled in Agile and Waterfall SDLCs with a proven track record of driving automation and process improvements. Adept at leading teams, mentoring junior engineers, and delivering high-impact data solutions.
             </motion.p>
 
             <div className="mt-10 flex flex-wrap gap-7 sm:gap-10 justify-center">

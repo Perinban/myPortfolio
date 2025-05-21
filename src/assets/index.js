@@ -10,6 +10,8 @@ import indianweather from "./projects/indianweather.png";
 import linearmodel from "./projects/linearmodel.png";
 import stockmarket from "./projects/stockmarket.png";
 import studentdata from "./projects/studentdata.png";
+import talentbliss from "./projects/TalentBliss.png";
+import reviewxtract from "./projects/ReviewXtract.png";
 
 import abinitio from "./tech/abinitio.png";
 import alm from "./tech/alm.png";
@@ -100,4 +102,6 @@ export {
   webdevelopment,
   profileImage,
   cv,
+  talentbliss,
+  reviewxtract
 };
