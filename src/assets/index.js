@@ -51,7 +51,7 @@ import webdevelopment from './roles/webdevelopment.png';
 
 import cv from './CV.pdf';
 
-import profileImage from './profileImage.png';
+import profileImage from './ProfileImage.jpg';
 
 export {
   atos,

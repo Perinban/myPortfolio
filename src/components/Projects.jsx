@@ -47,7 +47,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                             <img
                                 src={demo}
                                 alt="demo"
-                                className="w-full h-full scale-150 object-contain"
+                                className="w-full h-full object-contain"
+                                style={{ transform: 'rotate(90deg) scale(1.3)' }}
                             />
                         </div>
                     </div>
