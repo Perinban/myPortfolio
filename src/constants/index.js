@@ -1,40 +1,40 @@
 import {
-        atos,
-        lti,
-        kcg,
-        ue,
-        abinitio,
-        alm,
-        bitbucket,
-        confluence,
-        css,
-        docker,
-        ecc,
-        html,
-        javascript,
-        jenkins,
-        jira,
-        kornshell,
-        msoffice,
-        oraclesql,
-        python,
-        reactjs,
-        rlm,
-        tailwind,
-        talentbliss,
-        reviewxtract,
-        azure,
-        tableau,
-        best11,
-        goldtrade,
-        indianweather,
-        linearmodel,
-        stockmarket,
-        studentdata,
-        dataengineer,
-        dataanalyst,
-        datascientist,
-        webdevelopment,
+    atos,
+    lti,
+    kcg,
+    ue,
+    abinitio,
+    alm,
+    bitbucket,
+    confluence,
+    css,
+    docker,
+    ecc,
+    html,
+    javascript,
+    jenkins,
+    jira,
+    kornshell,
+    msoffice,
+    oraclesql,
+    python,
+    reactjs,
+    rlm,
+    tailwind,
+    talentbliss,
+    reviewxtract,
+    azure,
+    tableau,
+    best11,
+    goldtrade,
+    indianweather,
+    linearmodel,
+    stockmarket,
+    studentdata,
+    dataengineer,
+    dataanalyst,
+    datascientist,
+    webdevelopment,
 } from "../assets";
 
 export const navLinks = [
@@ -49,6 +49,10 @@ export const navLinks = [
     {
         id: "projects",
         title: "Projects",
+    },
+    {
+        id: "linkedin",
+        title: "LinkedIn",
     },
     {
         id: "contact",
@@ -153,7 +157,7 @@ const journeys = [
         title: "M.Sc in Data Science",
         name: "University of Europe for Applied Sciences",
         icon: ue,
-        iconBg: "#E6DEDD",
+        iconBg: "#ffffff",
         date: "Mar 2024 - Feb 2026",
         points: [
 
@@ -163,7 +167,7 @@ const journeys = [
         title: "Senior Data Engineer",
         name: "LTIMindtree",
         icon: lti,
-        iconBg: "#E6DEDD",
+        iconBg: "#ffffff",
         date: "Oct 2021 - Feb 2024",
         points: [
             "Created a unified reporting framework based on user requirements from Jira to streamline reporting submissions",
@@ -180,7 +184,7 @@ const journeys = [
         title: "Associate Consultant",
         name: "Atos Syntel",
         icon: atos,
-        iconBg: "#fff",
+        iconBg: "#ffffff",
         date: "May 2018 - Oct 2021",
         points: [
             "Design, develop, and maintain interfaces based on client requirements and field mapping documents",
@@ -198,7 +202,7 @@ const journeys = [
         title: "B.Tech in Information Technology",
         name: "KCG College of Techonology",
         icon: kcg,
-        iconBg: "#E6DEDD",
+        iconBg: "#ffffff",
         date: "Aug 2014 - May 2018",
         points: [
 
@@ -335,7 +339,7 @@ const projects = [
     {
         name: "ReviewXtract",
         description:
-            "This project is a job portal designed to facilitate job searches.",
+            "A real-time sentiment analysis project that extracts and analyzes product reviews from Flipkart using web scraping, NLP, and machine learning. Implements TF-IDF, topic modeling, and a Random Forest Classifier to classify customer feedback and visualize product sentiment trends.",
         tags: [
             {
                 "name": "python",
@@ -511,6 +515,41 @@ const projects = [
         demo_link: "https://drawsql.app/teams/de-28/diagrams/de",
         category: "Normalization",
     }
+];
+
+export const canvasColors = {
+    coinGold: "#ffaa00",
+    starWhite: "#ffffff",
+    accent: "#a78bfa",
+};
+
+export const brandColors = {
+    linkedin: "#0A66C2",
+    github: "#24292e",
+    gmail: "#EA4335",
+};
+
+export const linkedin_posts = [
+    {
+        id: "7465428378284777472",
+        urn: "share",
+        title: "Rust + Claude Code + Perplexity",
+    },
+    {
+        id: "7430531431480627200",
+        urn: "share",
+        title: "Meta XUDA + Masters Thesis + Apple Silicon",
+    },
+    {
+        id: "7445712617932832768",
+        urn: "ugcPost",
+        title: "Machine Learning + LLM + Embedded AI",
+    },
+    {
+        id: "7449078701566320640",
+        urn: "ugcPost",
+        title: "Machine Learning + LLM + Local AI",
+    },
 ];
 
 export { professional_technologies, other_technologies, open_roles, journeys, projects  };

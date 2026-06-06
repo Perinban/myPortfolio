@@ -90,7 +90,7 @@ const Contact = () => {
                             value={form.name}
                             onChange={handleChange}
                             placeholder="Please provide your name"
-                            className="bg-tertiary py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outline-none border-none font-medium"
+                            className="bg-tertiary py-4 px-6 placeholder:text-supplementary text-secondary rounded-lg outline-none border-none font-medium"
                         />
                     </label>
                     <label className="flex flex-col">
@@ -103,7 +103,7 @@ const Contact = () => {
                             value={form.email}
                             onChange={handleChange}
                             placeholder="Please provide your email address"
-                            className="bg-tertiary py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outline-none border-none font-medium"
+                            className="bg-tertiary py-4 px-6 placeholder:text-supplementary text-secondary rounded-lg outline-none border-none font-medium"
                         />
                     </label>
                     <label className="flex flex-col">
@@ -114,13 +114,13 @@ const Contact = () => {
                             value={form.message}
                             onChange={handleChange}
                             placeholder="Please include any topics you would like to discuss."
-                            className="bg-tertiary py-4 px-6 placeholder:text-secondary text-secondary rounded-lg outline-none border-none font-medium"
+                            className="bg-tertiary py-4 px-6 placeholder:text-supplementary text-secondary rounded-lg outline-none border-none font-medium"
                         />
                     </label>
 
                     <button
                         type="submit"
-                        className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-secondary font-bold shadow-md shadow-primary"
+                        className="bg-accent py-3 px-8 rounded-xl outline-none w-fit text-primary font-bold shadow-md shadow-accent/30"
                     >
                         {loading ? "Sending..." : "Send"}
                     </button>

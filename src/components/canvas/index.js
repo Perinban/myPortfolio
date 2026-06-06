@@ -1,6 +1,6 @@
 import EarthCanvas from "./Earth";
-import CoinCanvas from "./Coin.jsx";
 import ResumeCanvas from "./Resume";
 import Buttons from "./Buttons";
+import StarsCanvas from "./Stars";
 
-export { EarthCanvas, CoinCanvas, ResumeCanvas, Buttons };
+export { EarthCanvas, ResumeCanvas, Buttons, StarsCanvas };

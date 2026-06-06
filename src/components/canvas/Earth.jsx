@@ -26,7 +26,9 @@ const EarthCanvas = () => (
     <Canvas
         shadows
         frameloop="demand"
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
+        performance={{ min: 0.5 }}
+        gl={{ powerPreference: "low-power", antialias: false }}
         camera={{ fov: 45, near: 0.1, far: 200, position: [-4, 3, 6] }}
     >
         <Suspense fallback={<CanvasLoader />}>

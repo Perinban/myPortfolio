@@ -1,4 +1,4 @@
-import { ResumeCanvas, CoinCanvas } from './canvas';
+import { ResumeCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -8,6 +8,7 @@ import Journey from './Journey';
 import Projects from './Projects.jsx';
 import Contact from './Contact';
 import Loader from './Loader';
+import LinkedIn from './Linkedin';
 
 export {
   Hero,
@@ -20,5 +21,5 @@ export {
   Contact,
   Loader,
   ResumeCanvas,
-  CoinCanvas
+  LinkedIn,
 }

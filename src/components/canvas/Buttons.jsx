@@ -16,8 +16,8 @@ const Buttons = ({ categories, filterProjects, selectedCategory }) => {
                 onClick={() => filterProjects('All')}
                 className={`py-2 px-6 rounded-lg transition-all duration-300 ${
                     selectedCategory === 'All'
-                        ? 'bg-gradient-to-r from-[#A67B5B] to-[#8B5E3C] text-secondary'
-                        : 'bg-[#E8E8E8] text-accent hover:bg-gradient-to-r hover:from-[#D1B78C] hover:to-[#C1A79E]'
+                        ? 'bg-accent text-primary border border-accent'
+                        : 'bg-auxiliary text-supplementary border border-auxiliary hover:border-accent hover:text-accent'
                 }`}
             >
                 All
@@ -33,8 +33,8 @@ const Buttons = ({ categories, filterProjects, selectedCategory }) => {
                     onClick={() => filterProjects(category)}
                     className={`py-2 px-6 rounded-lg transition-all duration-300 ${
                         selectedCategory === category
-                            ? 'bg-gradient-to-r from-[#A67B5B] to-[#8B5E3C] text-secondary'
-                            : 'bg-[#E8E8E8] text-accent hover:bg-gradient-to-r hover:from-[#D1B78C] hover:to-[#C1A79E]'
+                            ? 'bg-accent text-primary border border-accent'
+                            : 'bg-auxiliary text-supplementary border border-auxiliary hover:border-accent hover:text-accent'
                     }`}
                 >
                     {category}
