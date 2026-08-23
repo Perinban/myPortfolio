@@ -8,7 +8,6 @@ import best11 from "./projects/best11.png";
 import goldtrade from "./projects/goldtrade.png";
 import indianweather from "./projects/indianweather.png";
 import linearmodel from "./projects/linearmodel.png";
-import stockmarket from "./projects/stockmarket.png";
 import studentdata from "./projects/studentdata.png";
 import talentbliss from "./projects/TalentBliss.png";
 import reviewxtract from "./projects/ReviewXtract.png";
@@ -64,7 +63,6 @@ export {
   goldtrade,
   indianweather,
   linearmodel,
-  stockmarket,
   studentdata,
   abinitio,
   alm,

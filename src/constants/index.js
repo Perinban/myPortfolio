@@ -29,7 +29,6 @@ import {
     goldtrade,
     indianweather,
     linearmodel,
-    stockmarket,
     studentdata,
     dataengineer,
     dataanalyst,
@@ -254,68 +253,21 @@ const projects = [
             },
         ],
         image: goldtrade,
-        source_code_link: "https://github.com/Perinban/Significance-Of-Gold-Trade",
+        source_code_link: "https://github.com/Perinban/brics-gold-trade-analysis",
         demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/SignificanceofGoldTradeonBRICSvsOtherCountries/PartnersList",
-        category: "Data Wrangling, Data Visualisation",
-    },
-    {
-        name: "Stock Market Analysis",
-        description:
-            "This project focuses on examining the variances in the stock market performance among companies over a three-year period.",
-        tags: [
-            {
-                "name": "python",
-                "color": "text-sky-400"
-            },
-            {
-                "name": "numpy",
-                "color": "text-emerald-400"
-            },
-            {
-                "name": "scipy",
-                "color": "text-pink-400"
-            },
-            {
-                "name": "SqlAlchemy",
-                "color": "text-orange-300"
-            },
-            {
-                "name": "yfinance",
-                "color": "text-rose-400"
-            },
-            {
-                "name": "alphavantage",
-                "color": "text-lime-300"
-            },
-            {
-                "name": "OracleSQL",
-                "color": "text-yellow-500"
-            },
-            {
-                "name": "Docker",
-                "color": "text-teal-400"
-            },
-            {
-                "name": "tableau",
-                "color": "text-indigo-300"
-            },
-        ],
-        image: stockmarket,
-        source_code_link: "https://github.com/Perinban/Stock-Market-Analysis-DAX",
-        demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/StockAnalysisonDAXCompanies/Closing_Price",
         category: "Data Wrangling, Data Visualisation",
     },
     {
         name: "TalentBliss",
         description:
-            "This project is a job portal designed to facilitate job searches.",
+            "Self-hosted full-stack job portal with a React frontend, Express API, PostgreSQL persistence, and Python ingestion pipelines.",
         tags: [
             {
                 "name": "react",
                 "color": "text-yellow-500"
             },
             {
-                "name": "vue",
+                "name": "express",
                 "color": "text-teal-400"
             },
             {
@@ -323,18 +275,18 @@ const projects = [
                 "color": "text-pink-400"
             },
             {
-                "name": "supabase",
+                "name": "postgresql",
                 "color": "text-sky-400"
             },
             {
-                "name": "clerk",
+                "name": "python",
                 "color": "text-teal-400"
             },
         ],
         image: talentbliss,
         source_code_link: "https://github.com/Perinban/TalentBliss",
         demo_link: "https://perinban.github.io/TalentBliss/",
-        category: "Javascript",
+        category: "Full-stack Web Application",
     },
     {
         name: "ReviewXtract",
@@ -422,7 +374,7 @@ const projects = [
             },
         ],
         image: indianweather,
-        source_code_link: "https://github.com/Perinban/Indian-weather-analysis/",
+        source_code_link: "https://github.com/Perinban/india-weather-ml-analysis/",
         demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/EDAAnalysisonIndianWeather/Myth1",
         category: "Data Wrangling, Normalization, Data Visualisation, Machine Learning",
     },
@@ -449,7 +401,7 @@ const projects = [
             },
         ],
         image: best11,
-        source_code_link: "https://github.com/Perinban/Indian-weather-analysis/",
+        source_code_link: "https://github.com/Perinban/t20-best-xi-analysis/",
         demo_link: "https://app.powerbi.com/reportEmbed?reportId=ee1d329c-33ae-4c3c-a441-4584b5e37d1b&autoAuth=true&ctid=b4b62109-b5e5-499a-a5da-97f68d962343",
         category: "Data Wrangling, Data Visualisation",
     },
@@ -493,9 +445,9 @@ const projects = [
         category: "Machine Learning",
     },
     {
-        name: "Analysis on Student Data",
+        name: "Student Database Design",
         description:
-            "This project provides the analysis on dummy student data",
+            "Relational database design and normalization project using synthetic student data, Oracle SQL, and ER modeling.",
         tags: [
             {
                 "name": "OracleSQL",
@@ -511,9 +463,9 @@ const projects = [
             },
         ],
         image: studentdata,
-        source_code_link: "https://github.com/Perinban/simple-linear-regression-ml/",
+        source_code_link: "https://github.com/Perinban/student-database-design/",
         demo_link: "https://drawsql.app/teams/de-28/diagrams/de",
-        category: "Normalization",
+        category: "Database Design, Normalization",
     }
 ];
 

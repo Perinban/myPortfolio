@@ -1,52 +1,81 @@
 # Perinban Parameshwaran — Portfolio
 
-![Deploy](https://github.com/Perinban/myPortfolio/actions/workflows/deploy.yml/badge.svg)
+Personal portfolio website presenting my data-engineering experience, technical skills, education, projects, and professional content through a React-based interactive interface.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/perinban-parameshwaran/)
-[![GitHub](https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Perinban)
-[![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/perinban.parameshwaran)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:p.perinban@gmail.com)
+[![Deploy](https://github.com/Perinban/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Perinban/portfolio/actions/workflows/deploy.yml)
 
-A personal portfolio website built with React, Vite, Three.js, and Tailwind CSS, deployed via GitHub Pages.
+## Live site and profiles
 
-🌐 **Live site:** [perinban.github.io/myPortfolio](https://perinban.github.io/myPortfolio/)
+- **Portfolio:** [perinban.github.io/portfolio](https://perinban.github.io/portfolio/)
+- **GitHub:** [github.com/Perinban](https://github.com/Perinban)
+- **LinkedIn:** [linkedin.com/in/perinban-parameshwaran](https://www.linkedin.com/in/perinban-parameshwaran/)
+- **Tableau Public:** [Perinban Parameshwaran](https://public.tableau.com/app/profile/perinban.parameshwaran)
+- **Email:** [p.perinban@gmail.com](mailto:p.perinban@gmail.com)
 
----
+## What the site contains
 
-## About
+- **About** — engineering background and technical profile.
+- **Journey** — professional experience and education timeline.
+- **Projects** — selected data engineering, analytics, machine-learning, and software projects.
+- **LinkedIn** — selected professional posts and technical content.
+- **Contact** — direct contact form and profile links.
 
-This portfolio showcases my journey as a Data Engineer, ETL Developer, and Software Engineer — including my professional experience, data science projects, and tech stack.
+## Featured projects
 
-**Sections:**
-- **About** — Open roles I'm targeting and skill overview
-- **Journey** — Work experience and education timeline
-- **Projects** — Data science, ML, and web development projects
-- **LinkedIn** — Recent LinkedIn posts
-- **Contact** — Get in touch
+| Project | Main area | Repository / output |
+| --- | --- | --- |
+| BRICS Gold Trade Analysis | Data engineering, trade analysis, Tableau | [Repository](https://github.com/Perinban/brics-gold-trade-analysis) |
+| TalentBliss | Full-stack job platform and data pipelines | [Repository](https://github.com/Perinban/TalentBliss) |
+| ReviewXtract | Web scraping, NLP, sentiment and topic analysis | [Repository](https://github.com/Perinban/ReviewXtract) |
+| India Weather ML Analysis | Weather analytics, ML, database design, Tableau | [Repository](https://github.com/Perinban/india-weather-ml-analysis) |
+| T20 Best XI Analysis | Cricket analytics and Power BI | [Repository](https://github.com/Perinban/t20-best-xi-analysis) |
+| Student Database Design | SQL, normalization, relational modeling | [Repository](https://github.com/Perinban/student-database-design) |
 
----
+## Tech stack
 
-## Tech Stack
+- React 18
+- Vite
+- Three.js / React Three Fiber
+- Tailwind CSS
+- Framer Motion
+- EmailJS
+- GitHub Actions
+- GitHub Pages
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=github&logoColor=white)
+## Local development
 
----
+```bash
+npm install
+npm run dev
+```
 
-## Projects Showcased
+Production build and preview:
 
-| Project | Category |
-|---|---|
-| Significance of Gold Trade | Data Wrangling, Visualisation |
-| Stock Market Analysis | Data Wrangling, Visualisation |
-| TalentBliss (Job Portal) | JavaScript / React |
-| ReviewXtract | ML, Marketing Analytics |
-| Indian Weather Analysis | ML, Visualisation |
-| Best Eleven — Cricket T20 Analysis | Data Wrangling, Visualisation |
-| Linear Regression Model Analysis | Machine Learning |
-| Student Data Analysis | Normalization, SQL |
+```bash
+npm run build
+npm run preview
+```
+
+Lint checks:
+
+```bash
+npm run lint
+```
+
+## Repository structure
+
+```text
+.
+├── public/                # Static assets
+├── src/                   # React application source
+│   ├── assets/            # Project and UI assets
+│   ├── components/        # Reusable UI components
+│   └── constants/         # Portfolio content and project metadata
+├── .github/workflows/     # GitHub Pages deployment
+├── vite.config.js
+└── package.json
+```
+
+## Deployment
+
+Pushes to `main` run the GitHub Actions deployment workflow. Vite uses the `/portfolio/` base path so the generated application and assets resolve correctly on GitHub Pages.
