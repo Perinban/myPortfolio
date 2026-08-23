@@ -1,143 +1,90 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { Typewriter } from "react-simple-typewriter";
 import { profileImage } from "../assets";
-import { titles, brandColors } from "../constants";
-import { ResumeCanvas } from "./canvas";
-import { fadeIn, slideIn } from "../utils/motion";
+import { brandColors } from "../constants";
+import { fadeIn } from "../utils/motion";
 
-const fadeInLeft02 = fadeIn("left", "tween", 0.1, 0.5);
-const fadeInLeft04 = fadeIn("left", "tween", 0.2, 0.5);
-const fadeInLeft06 = fadeIn("left", "tween", 0.3, 0.5);
-const fadeInLeft08 = fadeIn("left", "tween", 0.4, 0.5);
-const fadeInLeft1 = fadeIn("left", "tween", 0.5, 0.5);
-const fadeInLeft12 = fadeIn("left", "tween", 0.6, 0.5);
-const fadeInLeft14 = fadeIn("left", "tween", 0.7, 0.5);
+const SocialButton = ({ href, label, children }) => (
+    <a
+        href={href}
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        aria-label={label}
+        className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-tertiary transition-transform duration-200 hover:-translate-y-0.5 hover:border-accent/40"
+    >
+        {children}
+    </a>
+);
 
-const slideInUp02 = slideIn("up", "tween", 0.1, 0.5);
+const Hero = () => (
+    <section id="top" className="relative overflow-hidden border-b border-white/5 pt-[72px]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(167,139,250,0.12),transparent_32%),radial-gradient(circle_at_82%_25%,rgba(56,189,248,0.08),transparent_26%)]" />
 
-const trimmedTitles = titles.map((t) => t.trim());
+        <div className={`${styles.paddingX} relative mx-auto grid min-h-[calc(100svh-72px)] max-w-7xl items-center gap-7 py-6 sm:py-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.72fr)] lg:gap-12 lg:py-10 xl:py-12`}>
+            <motion.div initial="hidden" animate="show" variants={fadeIn("right", "tween", 0.05, 0.55)} className="max-w-3xl">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent sm:text-sm">
+                    Data Engineer · Berlin, Germany
+                </p>
 
-const Hero = () => {
-    const { paddingX, heroHeadText, heroSubText } = styles;
+                <h1 className={`${styles.heroHeadText} text-secondary`}>
+                    Perinban <span className="text-accent">Parameshwaran</span>
+                </h1>
 
-    return (
-        <section
-            className={`${paddingX} relative w-full min-h-screen pt-32 lg:pt-48 flex flex-col lg:flex-row justify-between items-start bg-primary`}
-        >
-            <div
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `url(${profileImage})`,
-                    backgroundSize: "110%",
-                    backgroundPosition: "right center",
-                    backgroundRepeat: "no-repeat",
-                    transform: "scaleX(-1)",
-                }}
-            />
+                <p className={`${styles.heroSubText} mt-4 max-w-2xl text-secondary/90`}>
+                    Data engineering, distributed systems, performance engineering, and GPU / AI infrastructure.
+                </p>
 
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
+                <p className="mt-4 max-w-2xl text-[15px] leading-7 text-secondary/70 sm:text-[16px] sm:leading-7">
+                    I have 6+ years of professional experience building production data systems, with Ab Initio at the core of my engineering background. My recent work extends into Rust/C++, runtime behavior, GPU computing, and resource-efficient AI systems.
+                </p>
 
-            <motion.div
-                initial="hidden"
-                animate="show"
-                variants={fadeInLeft02}
-                className="z-10 flex flex-col lg:flex-row lg:justify-between items-start gap-5 lg:gap-10 max-w-7xl mx-auto w-full"
-            >
-                <div className="flex flex-col gap-3 lg:gap-5 items-start text-left max-w-2xl w-full">
-                    <motion.h2
-                        variants={fadeInLeft04}
-                        className={`${heroHeadText} text-secondary leading-tight break-words max-w-2xl text-left`}
-                    >
-                        Hi, I am&nbsp;
-                        <span className="text-accent font-black">Perinban Parameshwaran.</span>
-                    </motion.h2>
-
-                    <motion.div
-                        variants={fadeInLeft06}
-                        className="flex flex-col lg:flex-row gap-5 lg:gap-7 items-center"
-                    >
-                        <ResumeCanvas />
-                        <div className="flex gap-5 items-center">
-                            <motion.a
-                                href="https://www.linkedin.com/in/perinban-parameshwaran/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variants={fadeInLeft08}
-                                className="hover:scale-110 transition-transform duration-300"
-                            >
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="36" height="36" rx="8" fill={brandColors.linkedin}/>
-                                    <path d="M10 14h3.5v11H10V14zm1.75-1.5a2 2 0 110-4 2 2 0 010 4zM16 14h3.4v1.5h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.25 2.36 4.25 5.43V25h-3.5v-5.25c0-1.25-.02-2.86-1.74-2.86-1.75 0-2.01 1.36-2.01 2.77V25H16V14z" fill="white"/>
-                                </svg>
-                            </motion.a>
-                            <motion.a
-                                href="https://github.com/Perinban"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variants={fadeInLeft1}
-                                className="hover:scale-110 transition-transform duration-300"
-                            >
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="36" height="36" rx="8" fill={brandColors.github}/>
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M18 8C12.477 8 8 12.477 8 18c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0118 13.58c.85.004 1.705.114 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C25.138 26.163 28 22.418 28 18c0-5.523-4.477-10-10-10z" fill="white"/>
-                                </svg>
-                            </motion.a>
-                            <motion.a
-                                href="mailto:perinban.parameshwaran@ue-germany.de"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variants={fadeInLeft12}
-                                className="hover:scale-110 transition-transform duration-300"
-                            >
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="36" height="36" rx="8" fill={brandColors.gmail}/>
-                                    <path d="M10 12h16c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1H10c-.55 0-1-.45-1-1V13c0-.55.45-1 1-1z" fill="white"/>
-                                    <path d="M9 13l9 6 9-6" stroke={brandColors.gmail} strokeWidth="1.5"/>
-                                </svg>
-                            </motion.a>
+                <div className="mt-6 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+                    {[
+                        ["6+ years", "Data engineering"],
+                        ["M.Sc.", "Data Science"],
+                        ["Current", "Entual GmbH"],
+                    ].map(([value, label]) => (
+                        <div key={label} className="rounded-2xl border border-white/10 bg-tertiary/80 px-4 py-3">
+                            <div className="text-lg font-bold text-secondary">{value}</div>
+                            <div className="mt-1 text-xs text-secondary/60">{label}</div>
                         </div>
-                    </motion.div>
+                    ))}
+                </div>
 
-                    <motion.p
-                        variants={fadeInLeft14}
-                        className={`${heroSubText} mt-2 text-secondary text-left`}
-                    >
-                        I am an&nbsp;
-                        <span className="text-accent">
-              <Typewriter
-                  words={trimmedTitles}
-                  loop={0}
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={70}
-                  deleteSpeed={60}
-                  delaySpeed={1500}
-              />
-            </span>
-                    </motion.p>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <a href="#projects" className="rounded-xl bg-accent px-5 py-3 text-sm font-bold text-primary transition-transform hover:-translate-y-0.5">
+                        View projects
+                    </a>
+                    <a href="#contact" className="rounded-xl border border-white/10 bg-tertiary px-5 py-3 text-sm font-semibold text-secondary transition-colors hover:border-accent/40 hover:text-accent">
+                        Contact
+                    </a>
+
+                    <div className="ml-0 flex gap-2 sm:ml-2">
+                        <SocialButton href="https://www.linkedin.com/in/perinban-parameshwaran/" label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill={brandColors.linkedin}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z" /></svg>
+                        </SocialButton>
+                        <SocialButton href="https://github.com/Perinban" label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 7.58c.85.004 1.705.114 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                        </SocialButton>
+                        <SocialButton href="mailto:p.perinban@gmail.com" label="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={brandColors.gmail} strokeWidth="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                        </SocialButton>
+                    </div>
                 </div>
             </motion.div>
 
-            <motion.div
-                initial="hidden"
-                animate="show"
-                variants={slideInUp02}
-                className="hidden lg:flex absolute bottom-10 lg:bottom-20 w-full justify-center items-center z-10"
-            >
-                <a href="#about" aria-label="Scroll to about section">
-                    <div className="w-12 h-20 rounded-full border-4 border-accent bg-auxiliary flex justify-center items-center p-3 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <motion.div
-                            animate={{ y: [-10, 10, -10] }}
-                            transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                            className="w-4 h-4 rounded-full bg-secondary shadow-md"
-                        />
+            <motion.div initial="hidden" animate="show" variants={fadeIn("left", "tween", 0.12, 0.6)} className="relative mx-auto w-full max-w-[340px] sm:max-w-[360px] lg:mx-0 lg:max-w-[340px] lg:justify-self-end xl:max-w-[360px]">
+                <div className="absolute -inset-6 rounded-[40px] bg-accent/10 blur-3xl" />
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[30px] border border-white/10 bg-tertiary shadow-2xl">
+                    <img src={profileImage} alt="Perinban Parameshwaran" className="h-full w-full object-cover object-center" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary via-primary/60 to-transparent p-6 pt-20">
+                        <p className="text-sm font-semibold text-secondary">Data Engineer · Systems & Performance</p>
+                        <p className="mt-1 text-xs text-secondary/60">Berlin, Germany</p>
                     </div>
-                </a>
+                </div>
             </motion.div>
-        </section>
-    );
-};
+        </div>
+    </section>
+);
 
 export default Hero;

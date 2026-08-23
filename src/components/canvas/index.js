@@ -1,6 +1,5 @@
-import EarthCanvas from "./Earth";
-import ResumeCanvas from "./Resume";
-import Buttons from "./Buttons";
 import StarsCanvas from "./Stars";
+import ComputeCanvas from "./Compute";
+import EarthCanvas from "./Earth";
 
-export { EarthCanvas, ResumeCanvas, Buttons, StarsCanvas };
+export { StarsCanvas, ComputeCanvas, EarthCanvas };

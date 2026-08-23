@@ -1,84 +1,65 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from '../hoc';
-import { professional_technologies } from '../constants';
-import { flipIn, textVariant } from "../utils/motion";
+import { technology_groups } from '../constants';
+import { fadeIn, textVariant } from "../utils/motion";
 import { styles } from "../styles.js";
 
-const Tech = ({ onLoad }) => {
-    useEffect(() => {
-        const t = setTimeout(() => { if (onLoad) onLoad(); }, 500);
-        return () => clearTimeout(t);
-    }, [onLoad]);
+const ComputeCanvas = lazy(() => import('./canvas/Compute'));
 
-    const TiltIcon = ({ technology }) => {
-        const ref = useRef();
-        const [tilt, setTilt] = useState({ x: 0, y: 0 });
-
-        const handleMouseMove = (e) => {
-            const rect = ref.current.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            const dx = (e.clientX - cx) / (rect.width / 2);
-            const dy = (e.clientY - cy) / (rect.height / 2);
-            setTilt({ x: dy * -20, y: dx * 20 });
-        };
-
-        const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
-
-        return (
-            <div
-                ref={ref}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                className="flex flex-col items-center cursor-pointer w-24 sm:w-28 md:w-32 lg:w-36"
-                style={{ perspective: '600px' }}
-            >
-                <motion.div
-                    animate={{ rotateX: tilt.x, rotateY: tilt.y, scale: tilt.x !== 0 ? 1.15 : 1 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 flex items-center justify-center p-3"
-                    style={{ transformStyle: 'preserve-3d' }}
-                >
-                    <img
-                        src={technology.icon}
-                        alt={technology.name}
-                        className="w-full h-full object-contain"
-                        style={{ filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.5))' }}
-                    />
-                </motion.div>
-                <p className="mt-2 text-xs sm:text-sm font-medium text-secondary text-center w-full">{technology.name}</p>
-            </div>
-        );
-    };
-
-
-
-    return (
-        <>
-            <motion.div variants={textVariant()} initial="hidden" animate="show" className="text-center mb-10">
-                <p className={`${styles.sectionSubText} text-supplementary`}>What I work with</p>
-                <h2 className={`${styles.sectionHeadText} text-secondary`}>Professional technologies.</h2>
+const Tech = () => (
+    <>
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-12">
+            <motion.div variants={textVariant()} initial="hidden" animate="show">
+                <p className={`${styles.sectionSubText} text-supplementary`}>Technology landscape</p>
+                <h2 className={`${styles.sectionHeadText} text-secondary`}>What I work with.</h2>
+                <p className="mt-5 max-w-3xl text-[15px] leading-7 text-secondary/70 sm:text-[16px] sm:leading-8">
+                    My professional foundation is enterprise data engineering. The same focus on data flow, reliability, execution, and performance now extends into distributed systems, systems programming, GPU compute, and AI runtimes.
+                </p>
+                <p className="mt-4 text-sm leading-6 text-secondary/50">
+                    The interactive compute model represents the layers I increasingly work across: data, runtime, memory, and hardware.
+                </p>
             </motion.div>
+
             <motion.div
-                variants={flipIn('right', 0, 1)}
+                variants={fadeIn("up", "spring", 0.1, 0.65)}
                 initial="hidden"
                 animate="show"
-                className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10"
+                className="relative overflow-hidden"
             >
-                {professional_technologies.map((technology, index) => (
-                    <motion.div
-                        key={technology.name}
-                        variants={flipIn('up', 0.1 * index, 0.6)}
-                        initial="hidden"
-                        animate="show"
-                    >
-                        <TiltIcon technology={technology} />
-                    </motion.div>
-                ))}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(167,139,250,0.08),transparent_58%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:radial-gradient(circle_at_center,black,transparent_72%)]" />
+                <Suspense fallback={<div className="h-[280px] sm:h-[320px] lg:h-[340px]" />}>
+                    <ComputeCanvas />
+                </Suspense>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-primary to-transparent" />
             </motion.div>
-        </>
-    );
-};
+        </div>
 
-export default SectionWrapper(Tech, "");
+        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {technology_groups.map((group, index) => (
+                <motion.div
+                    key={group.title}
+                    variants={fadeIn("up", "spring", 0.06 * index, 0.55)}
+                    initial="hidden"
+                    animate="show"
+                    className="h-full rounded-2xl border border-white/10 bg-tertiary/90 p-5 backdrop-blur-sm sm:p-6"
+                >
+                    <h3 className="text-[17px] font-bold text-accent">{group.title}</h3>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        {group.technologies.map((technology) => (
+                            <span
+                                key={technology}
+                                className="rounded-lg border border-white/10 bg-primary/70 px-2.5 py-1.5 text-xs font-medium text-secondary/70"
+                            >
+                                {technology}
+                            </span>
+                        ))}
+                    </div>
+                </motion.div>
+            ))}
+        </div>
+    </>
+);
+
+export default SectionWrapper(Tech, "technology");

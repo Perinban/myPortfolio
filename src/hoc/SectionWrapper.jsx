@@ -3,18 +3,16 @@ import { styles } from '../styles';
 import { staggerContainer } from "../utils/motion";
 
 const SectionWrapper = (Component, idName) => {
-
-    return function HOC(props) {
+    return function Section(props) {
         return (
             <motion.section
+                id={idName || undefined}
                 variants={staggerContainer()}
                 initial="hidden"
                 whileInView="show"
-                className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+                viewport={{ once: true, amount: 0.08 }}
+                className={`${styles.padding} max-w-7xl mx-auto relative z-0 scroll-mt-20`}
             >
-                <span className="hash-span" id={idName}>
-                    &nbsp;
-                </span>
                 <Component {...props} />
             </motion.section>
         );

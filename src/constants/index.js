@@ -3,477 +3,264 @@ import {
     lti,
     kcg,
     ue,
-    abinitio,
-    alm,
-    bitbucket,
-    confluence,
-    css,
-    docker,
-    ecc,
-    html,
-    javascript,
-    jenkins,
-    jira,
-    kornshell,
-    msoffice,
-    oraclesql,
-    python,
-    reactjs,
-    rlm,
-    tailwind,
-    talentbliss,
-    reviewxtract,
-    azure,
-    tableau,
-    best11,
-    goldtrade,
-    indianweather,
-    linearmodel,
-    studentdata,
-    dataengineer,
-    dataanalyst,
-    datascientist,
-    webdevelopment,
 } from "../assets";
 
 export const navLinks = [
+    { id: "about", title: "About" },
+    { id: "journey", title: "Journey" },
+    { id: "technology", title: "Technology" },
+    { id: "projects", title: "Projects" },
+    { id: "linkedin", title: "Updates" },
+    { id: "contact", title: "Contact" },
+];
+
+const focus_areas = [
     {
-        id: "about",
-        title: "About",
+        symbol: "DE",
+        title: "Data Engineering",
+        description: "Ab Initio, ETL/ELT, SQL, data quality, production pipelines, and operational reliability.",
     },
     {
-        id: "journey",
-        title: "Journey",
+        symbol: "DIST",
+        title: "Distributed Systems",
+        description: "Kafka, Airflow, Ray, AsyncIO, parallel processing, and scalable data-flow architecture.",
     },
     {
-        id: "projects",
-        title: "Projects",
+        symbol: "SYS",
+        title: "Systems & Performance",
+        description: "Rust, C/C++, runtime behavior, memory, concurrency, mmap, and performance-oriented engineering.",
     },
     {
-        id: "linkedin",
-        title: "LinkedIn",
-    },
-    {
-        id: "contact",
-        title: "Contact",
+        symbol: "GPU",
+        title: "GPU & AI Infrastructure",
+        description: "CUDA, Metal, Apple Silicon, Vulkan, local inference, and resource-efficient AI systems.",
     },
 ];
 
-export const titles = [
-    'Data Engineer.',
-    'Abinitio Developer.',
-    'ETL Developer.',
-    'Sofware Engineer.'
-]
-
-const open_roles = [
+const technology_groups = [
     {
-        title: "Data Engineer",
-        icon: dataengineer,
+        title: "Data Engineering",
+        technologies: ["Ab Initio", "ETL / ELT", "Oracle SQL", "PostgreSQL", "Data Quality", "Batch Processing"],
     },
     {
-        title: "Data Analyst",
-        icon: dataanalyst,
+        title: "Programming",
+        technologies: ["Python", "Rust", "C / C++", "Shell / KornShell", "JavaScript"],
     },
     {
-        title: "Data Scientist",
-        icon: datascientist,
+        title: "Distributed & Pipelines",
+        technologies: ["Kafka", "Airflow", "Ray", "AsyncIO", "GitHub Actions", "Terraform"],
     },
     {
-        title: "Web Developer",
-        icon: webdevelopment,
-    },
-];
-
-const professional_technologies = [
-    {
-        name: "Abinitio",
-        icon: abinitio,
+        title: "Systems & Compute",
+        technologies: ["CUDA", "Metal", "Vulkan", "Apple Silicon", "Linux", "macOS", "Docker"],
     },
     {
-        name: "Oracle SQL",
-        icon: oraclesql,
-    },
-    {
-        name: "Korn Shell Scripting",
-        icon: kornshell,
-    },
-    {
-        name: "Jira",
-        icon: jira,
-    },
-    {
-        name: "Confluence",
-        icon: confluence,
-    },
-    {
-        name: "Microsoft Office",
-        icon: msoffice,
-    },
-    {
-        name: "Jenkins",
-        icon: jenkins,
-    },
-    {
-        name: "RLM",
-        icon: rlm,
-    },
-    {
-        name: "HP ALM",
-        icon: alm,
-    },
-    {
-        name: "BitBucket",
-        icon: bitbucket,
-    }
-];
-
-const other_technologies = [
-    {
-        name: "Python",
-        icon: python,
-    },
-    {
-        name: "Tableau",
-        icon: tableau,
-    },
-    {
-        name: "Docker",
-        icon: docker,
-    },
-    {
-        name: "React JS",
-        icon: reactjs,
-    },
-    {
-        name: "Microsoft Azure",
-        icon: azure,
+        title: "Analytics & AI",
+        technologies: ["Pandas", "scikit-learn", "XGBoost", "SHAP", "Tableau", "LLM Inference"],
     },
 ];
 
 const journeys = [
     {
-        title: "M.Sc in Data Science",
-        name: "University of Europe for Applied Sciences",
-        icon: ue,
-        iconBg: "#ffffff",
-        date: "Mar 2024 - Feb 2026",
+        type: "Experience",
+        title: "Data Engineer",
+        name: "Entual GmbH",
+        icon: null,
+        initials: "E",
+        iconBg: "#0f172a",
+        date: "Aug 2026 - Present",
         points: [
-
+            "Ab Initio and enterprise data-integration engineering in Germany.",
+            "Production reliability, maintainability, and performance-focused delivery.",
         ],
     },
     {
-        title: "Senior Data Engineer",
+        type: "Experience",
+        title: "Research Assistant",
+        name: "Helmholtz Centre for Environmental Research (UFZ)",
+        icon: null,
+        initials: "UFZ",
+        iconBg: "#0f3d2e",
+        date: "2026 · 3-month research appointment",
+        points: [
+            "Async data collection with recovery, browser automation, geocoding, and enrichment.",
+            "PRISMA review automation, OCR correction, PDF digitization, and metadata cleanup.",
+            "CropYield ML with XGBoost, SHAP, statistical models, and automated reports.",
+            "20,000+ lines of Python delivered across research data and ML pipelines.",
+        ],
+    },
+    {
+        type: "Education",
+        title: "M.Sc. Data Science",
+        name: "University of Europe for Applied Sciences",
+        icon: ue,
+        initials: "UE",
+        iconBg: "#ffffff",
+        date: "Mar 2024 - Jun 2026",
+        points: [
+            "M.Sc. Data Science completed in Germany with 90.74% final result.",
+            "MetaXuda thesis: CUDA-style execution mapped to Metal on Apple Silicon.",
+            "Distributed data systems with Kafka, Airflow, Ray, AsyncIO, PostgreSQL, and Terraform.",
+        ],
+    },
+    {
+        type: "Experience",
+        title: "Senior Data Engineer / Module Lead",
         name: "LTIMindtree",
         icon: lti,
+        initials: "LTI",
         iconBg: "#ffffff",
         date: "Oct 2021 - Feb 2024",
         points: [
-            "Created a unified reporting framework based on user requirements from Jira to streamline reporting submissions",
-            "Developed automated recalculation processes for efficient report generation.",
-            "Implemented variance procedures to identify and analyze discrepancies between reports.",
-            "Incorporated supplemental data loads to enhance report comprehensiveness.",
-            "Improved report usability through drill-down capabilities and performance optimizations.",
-            "Provided timely resolution for production issues and BRE engine defects.",
-            "Ensured report accuracy and reliability through rigorous testing and evidence collection.",
-            "Maintained development environment health and performance"
+            "Ab Initio ETL/ELT for UK PRA and Turkey regulatory reporting.",
+            "~40% faster report generation through workflow automation.",
+            "Production/BRE resolution, reconciliation, testing, and data-quality controls.",
+            "Module leadership, technical guidance, and delivery mentoring.",
         ],
     },
     {
+        type: "Experience",
         title: "Associate Consultant",
         name: "Atos Syntel",
         icon: atos,
+        initials: "ATOS",
         iconBg: "#ffffff",
         date: "May 2018 - Oct 2021",
         points: [
-            "Design, develop, and maintain interfaces based on client requirements and field mapping documents",
-            "Conduct thorough testing, analysis, and validation",
-            "Provide ongoing support and troubleshooting until production readiness.",
-            "Monitor scheduled jobs, analyze failures, and provide RCA with solutions.",
-            "Generate and distribute status reports.",
-            "Identify and correct data discrepancies to ensure timely and accurate employee payments.",
-            "Analyze and resolve data inconsistencies between source systems and Datahub.",
-            "Develop and implement reporting solutions to meet client needs.",
-            "Automate report generation and distribution."
+            "35+ Ab Initio interfaces across global HR and payroll data flows.",
+            "Payroll logic, reconciliation, scheduling, and production issue resolution.",
+            "~60% reduction in manual testing through workflow automation.",
+            "Oracle SQL, KornShell, metadata, release, Agile, and Waterfall delivery.",
         ],
     },
     {
-        title: "B.Tech in Information Technology",
-        name: "KCG College of Techonology",
+        type: "Education",
+        title: "B.Tech. Information Technology",
+        name: "KCG College of Technology",
         icon: kcg,
+        initials: "KCG",
         iconBg: "#ffffff",
-        date: "Aug 2014 - May 2018",
+        date: "2014 - 2018",
         points: [
-
+            "B.Tech. in Information Technology.",
+            "Published work on a 3D indoor-navigation and location-aware system in 2018.",
         ],
     },
 ];
 
 const projects = [
     {
-        name: "Significance of Gold Trade",
-        description:
-            "This research provides the importance of gold trade imports from the reporting countries such as South Africa, Kenya and Egypt focusing on relation between the BRICS countries and other nations.",
+        name: "MetaXuda",
+        description: "Experimental CUDA-compatible runtime shim for Apple Silicon that maps core CUDA/Numba execution paths onto Metal, enabling CUDA-style workloads on Macs without NVIDIA hardware.",
         tags: [
-            {
-                "name": "python",
-                "color": "text-sky-400"
-            },
-            {
-                "name": "pandas",
-                "color": "text-emerald-400"
-            },
-            {
-                "name": "scipy",
-                "color": "text-pink-400"
-            },
-            {
-                "name": "UNComTrade",
-                "color": "text-rose-400"
-            },
-            {
-                "name": "worldbank",
-                "color": "text-orange-300"
-            },
-            {
-                "name": "SqlAlchemy",
-                "color": "text-amber-400"
-            },
-            {
-                "name": "OracleSQL",
-                "color": "text-yellow-500"
-            },
-            {
-                "name": "Docker",
-                "color": "text-teal-400"
-            },
-            {
-                "name": "tableau",
-                "color": "text-indigo-300"
-            },
+            { name: "rust", color: "text-orange-400" },
+            { name: "cuda", color: "text-green-400" },
+            { name: "metal", color: "text-sky-400" },
+            { name: "apple-silicon", color: "text-violet-300" },
+            { name: "gpu-runtime", color: "text-cyan-300" },
         ],
-        image: goldtrade,
-        source_code_link: "https://github.com/Perinban/brics-gold-trade-analysis",
-        demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/SignificanceofGoldTradeonBRICSvsOtherCountries/PartnersList",
-        category: "Data Wrangling, Data Visualisation",
+        source_code_link: "https://github.com/Perinban/MetaXuda",
+        demo_link: null,
+        category: "Systems Engineering, GPU Computing, AI Infrastructure",
+    },
+    {
+        name: "Clounar",
+        description: "Rust bridge that routes Claude Code model requests to Perplexity Sonar while keeping file, shell, Git, and other tool execution local and deterministic.",
+        tags: [
+            { name: "rust", color: "text-orange-400" },
+            { name: "claude-code", color: "text-amber-300" },
+            { name: "perplexity", color: "text-cyan-300" },
+            { name: "local-tools", color: "text-emerald-300" },
+            { name: "ai-infrastructure", color: "text-violet-300" },
+        ],
+        source_code_link: "https://github.com/Perinban/Clounar",
+        demo_link: null,
+        category: "Systems Engineering, AI Infrastructure, Developer Tooling",
+    },
+    {
+        name: "llama.cpp / AXON",
+        description: "Development branch on llama.cpp with persistent and file-backed KV-cache work, mmap memory optimizations, Vulkan/zero-copy improvements, system-prompt caching, and server/runtime extensions.",
+        tags: [
+            { name: "c++", color: "text-blue-300" },
+            { name: "llama.cpp", color: "text-slate-200" },
+            { name: "kv-cache", color: "text-violet-300" },
+            { name: "mmap", color: "text-cyan-300" },
+            { name: "vulkan", color: "text-rose-300" },
+        ],
+        source_code_link: "https://github.com/Perinban/llama.cpp/tree/axon-dev",
+        demo_link: null,
+        category: "Systems Engineering, AI Infrastructure, Open Source",
     },
     {
         name: "TalentBliss",
-        description:
-            "Self-hosted full-stack job portal with a React frontend, Express API, PostgreSQL persistence, and Python ingestion pipelines.",
+        description: "Self-hosted job platform combining a React frontend, Express API, PostgreSQL persistence, Python ingestion pipelines, automated scraping/discovery, CI/CD, and deployment tooling.",
         tags: [
-            {
-                "name": "react",
-                "color": "text-yellow-500"
-            },
-            {
-                "name": "express",
-                "color": "text-teal-400"
-            },
-            {
-                "name": "tailwind",
-                "color": "text-pink-400"
-            },
-            {
-                "name": "postgresql",
-                "color": "text-sky-400"
-            },
-            {
-                "name": "python",
-                "color": "text-teal-400"
-            },
+            { name: "react", color: "text-sky-300" },
+            { name: "express", color: "text-emerald-300" },
+            { name: "postgresql", color: "text-blue-300" },
+            { name: "python", color: "text-yellow-300" },
+            { name: "ci-cd", color: "text-violet-300" },
         ],
-        image: talentbliss,
         source_code_link: "https://github.com/Perinban/TalentBliss",
-        demo_link: "https://perinban.github.io/TalentBliss/",
-        category: "Full-stack Web Application",
+        demo_link: null,
+        status_note: "Live demo temporarily unavailable",
+        category: "Data Engineering, Full-stack Engineering",
     },
     {
         name: "ReviewXtract",
-        description:
-            "A real-time sentiment analysis project that extracts and analyzes product reviews from Flipkart using web scraping, NLP, and machine learning. Implements TF-IDF, topic modeling, and a Random Forest Classifier to classify customer feedback and visualize product sentiment trends.",
+        description: "End-to-end Flipkart review analytics workflow covering Selenium scraping, text preprocessing, NLP feature engineering, TF-IDF, topic modeling, clustering, and machine-learning sentiment analysis.",
         tags: [
-            {
-                "name": "python",
-                "color": "text-yellow-500"
-            },
-            {
-                "name": "lda",
-                "color": "text-teal-400"
-            },
-            {
-                "name": "flipkart",
-                "color": "text-pink-400"
-            },
-            {
-                "name": "scikit-learn",
-                "color": "text-emerald-300"
-            },
-            {
-                "name": "matplotlib",
-                "color": "text-cyan-400"
-            },
-            {
-                "name": "seaborn",
-                "color": "text-blue-400"
-            },
-            {
-                "name": "random forest",
-                "color": "text-teal-300"
-            },
+            { name: "python", color: "text-yellow-300" },
+            { name: "web-scraping", color: "text-orange-300" },
+            { name: "nlp", color: "text-emerald-300" },
+            { name: "topic-modeling", color: "text-violet-300" },
+            { name: "scikit-learn", color: "text-cyan-300" },
         ],
-        image: reviewxtract,
-        source_code_link: "https://github.com/Perinban/ReviewXtract/",
-        demo_link: "https://github.com/Perinban/ReviewXtract/",
-        category: "Data Wrangling, Data Visualisation, Machine Learning, Marketing Analytics",
+        source_code_link: "https://github.com/Perinban/ReviewXtract",
+        demo_link: null,
+        category: "Data Engineering, Machine Learning, NLP",
     },
     {
-        name: "Indian Weather Analysis",
-        description:
-            "The project share bridges that gap by using machine learning models to study how different weather conditions on India cause various effects on the air quality alongside other metrics.",
+        name: "BRICS Gold Trade Analysis",
+        description: "Data engineering and exploratory analysis of gold trade involving BRICS members and selected African reporting countries using UN Comtrade, World Bank reference data, Oracle, and Tableau.",
         tags: [
-            {
-                "name": "python",
-                "color": "text-sky-400"
-            },
-            {
-                "name": "pandas",
-                "color": "text-emerald-400"
-            },
-            {
-                "name": "OracleSQL",
-                "color": "text-yellow-500"
-            },
-            {
-                "name": "Docker",
-                "color": "text-teal-400"
-            },
-            {
-                "name": "kaggle",
-                "color": "text-lime-400"
-            },
-            {
-                "name": "scikit-learn",
-                "color": "text-emerald-300"
-            },
-            {
-                "name": "matplotlib",
-                "color": "text-cyan-400"
-            },
-            {
-                "name": "seaborn",
-                "color": "text-blue-400"
-            },
-            {
-                "name": "tableau",
-                "color": "text-indigo-300"
-            },
-            {
-                "name": "drawsql",
-                "color": "text-teal-300"
-            },
+            { name: "python", color: "text-sky-300" },
+            { name: "un-comtrade", color: "text-rose-300" },
+            { name: "oracle", color: "text-yellow-300" },
+            { name: "tableau", color: "text-indigo-300" },
         ],
-        image: indianweather,
-        source_code_link: "https://github.com/Perinban/india-weather-ml-analysis/",
+        source_code_link: "https://github.com/Perinban/brics-gold-trade-analysis",
+        demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/SignificanceofGoldTradeonBRICSvsOtherCountries/PartnersList",
+        category: "Data Engineering, Data Analysis, Data Visualisation",
+    },
+    {
+        name: "India Weather ML Analysis",
+        description: "Weather-data analysis combining relational modeling, statistical testing, machine-learning models, and Tableau to study relationships among temperature, humidity, wind, pressure, and air-quality indicators.",
+        tags: [
+            { name: "python", color: "text-sky-300" },
+            { name: "scikit-learn", color: "text-emerald-300" },
+            { name: "xgboost", color: "text-lime-300" },
+            { name: "oracle", color: "text-yellow-300" },
+            { name: "tableau", color: "text-indigo-300" },
+        ],
+        source_code_link: "https://github.com/Perinban/india-weather-ml-analysis",
         demo_link: "https://public.tableau.com/app/profile/perinban.parameshwaran/viz/EDAAnalysisonIndianWeather/Myth1",
-        category: "Data Wrangling, Normalization, Data Visualisation, Machine Learning",
+        category: "Data Analysis, Machine Learning, Data Visualisation",
     },
     {
-        name: "Best Eleven Analysis on Cricket",
-        description:
-            "The findings of this project are based on the data analysis of T20 World Cup through statistical methods and data visualization.",
+        name: "T20 Best XI Analysis",
+        description: "Role-aware T20 cricket analysis that transforms source JSON data into analysis-ready datasets and evaluates player performance for a balanced best XI with Power BI-ready metrics.",
         tags: [
-            {
-                "name": "python",
-                "color": "text-sky-400"
-            },
-            {
-                "name": "pandas",
-                "color": "text-emerald-400"
-            },
-            {
-                "name": "espn",
-                "color": "text-orange-400"
-            },
-            {
-                "name": "powerbi",
-                "color": "text-yellow-400"
-            },
+            { name: "python", color: "text-sky-300" },
+            { name: "pandas", color: "text-emerald-300" },
+            { name: "power-bi", color: "text-yellow-300" },
+            { name: "sports-analytics", color: "text-orange-300" },
         ],
-        image: best11,
-        source_code_link: "https://github.com/Perinban/t20-best-xi-analysis/",
+        source_code_link: "https://github.com/Perinban/t20-best-xi-analysis",
         demo_link: "https://app.powerbi.com/reportEmbed?reportId=ee1d329c-33ae-4c3c-a441-4584b5e37d1b&autoAuth=true&ctid=b4b62109-b5e5-499a-a5da-97f68d962343",
-        category: "Data Wrangling, Data Visualisation",
+        category: "Data Analysis, Data Visualisation",
     },
-    {
-        name: "Data Analytics in Project for Linear Regression Model",
-        description:
-            "This project provides the details on linear regression model analysis on dummy company data",
-        tags: [
-            {
-                "name": "python",
-                "color": "text-sky-400"
-            },
-            {
-                "name": "pandas",
-                "color": "text-emerald-400"
-            },
-            {
-                "name": "numpy",
-                "color": "text-rose-400"
-            },
-            {
-                "name": "matplotlib",
-                "color": "text-pink-400"
-            },
-            {
-                "name": "seaborn",
-                "color": "text-fuchsia-400"
-            },
-            {
-                "name": "scikit-learn",
-                "color": "text-violet-400"
-            },
-            {
-                "name": "statsmodels",
-                "color": "text-indigo-400"
-            },
-        ],
-        image: linearmodel,
-        source_code_link: "https://github.com/Perinban/simple-linear-regression-ml/",
-        demo_link: "https://github.com/Perinban/simple-linear-regression-ml/blob/main/index.ipynb",
-        category: "Machine Learning",
-    },
-    {
-        name: "Student Database Design",
-        description:
-            "Relational database design and normalization project using synthetic student data, Oracle SQL, and ER modeling.",
-        tags: [
-            {
-                "name": "OracleSQL",
-                "color": "text-yellow-500"
-            },
-            {
-                "name": "drawsql",
-                "color": "text-teal-400"
-            },
-            {
-                "name": "docker",
-                "color": "text-pink-400"
-            },
-        ],
-        image: studentdata,
-        source_code_link: "https://github.com/Perinban/student-database-design/",
-        demo_link: "https://drawsql.app/teams/de-28/diagrams/de",
-        category: "Database Design, Normalization",
-    }
 ];
-
-export const canvasColors = {
-    coinGold: "#ffaa00",
-    starWhite: "#ffffff",
-    accent: "#a78bfa",
-};
 
 export const brandColors = {
     linkedin: "#0A66C2",
@@ -481,27 +268,28 @@ export const brandColors = {
     gmail: "#EA4335",
 };
 
-export const linkedin_posts = [
+export const engineering_updates = [
     {
-        id: "7465428378284777472",
-        urn: "share",
-        title: "Rust + Claude Code + Perplexity",
+        contribution: "Built",
+        title: "Clounar — local AI tooling in Rust",
+        description: "Why I built a Rust bridge that keeps shell, file, Git, and other tool execution local while routing model requests to Perplexity Sonar.",
+        href: "https://www.linkedin.com/feed/update/urn:li:share:7465428378284777472",
+        tags: ["Rust", "Claude Code", "Perplexity"],
     },
     {
-        id: "7430531431480627200",
-        urn: "share",
-        title: "Meta XUDA + Masters Thesis + Apple Silicon",
+        contribution: "Master's thesis",
+        title: "MetaXuda — CUDA-style execution on Apple Silicon",
+        description: "A look at the runtime problem behind mapping core Numba CUDA execution paths onto Metal for Apple Silicon.",
+        href: "https://www.linkedin.com/feed/update/urn:li:share:7430531431480627200",
+        tags: ["Rust", "Metal", "CUDA"],
     },
     {
-        id: "7445712617932832768",
-        urn: "ugcPost",
-        title: "Machine Learning + LLM + Embedded AI",
-    },
-    {
-        id: "7449078701566320640",
-        urn: "ugcPost",
-        title: "Machine Learning + LLM + Local AI",
+        contribution: "Research work",
+        title: "UFZ — scientific data pipelines and machine learning",
+        description: "Notes from my UFZ work on asynchronous data collection, systematic-review automation, PDF digitization, XGBoost, and SHAP analysis.",
+        href: "https://www.linkedin.com/posts/perinban-parameshwaran_machinelearning-webscraping-python-activity-7467228710895599618-onYH",
+        tags: ["Python", "AsyncIO", "XGBoost"],
     },
 ];
 
-export { professional_technologies, other_technologies, open_roles, journeys, projects  };
+export { focus_areas, technology_groups, journeys, projects };

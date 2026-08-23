@@ -1,15 +1,15 @@
 const styles = {
-    paddingX: "sm:px-14 px-5",
-    paddingY: "sm:py-14 py-5",
-    padding: "sm:px-14 px-5 sm:py-14 py-8",
+    paddingX: "px-5 sm:px-8 lg:px-10",
+    paddingY: "py-10 sm:py-12 lg:py-14",
+    padding: "px-5 sm:px-8 lg:px-10 py-10 sm:py-12 lg:py-14",
     heroHeadText:
-        "font-black lg:text-[70px] sm:text-[50px] xs:text-[40px] text-[30px] lg:leading-[88px] mt-2",
+        "font-black text-[42px] sm:text-[56px] lg:text-[72px] leading-[1.02] tracking-[-0.045em]",
     heroSubText:
-        "font-medium lg:text-[28px] sm:text-[24px] xs:text-[18px] text-[14px] lg:leading-[36px]",
+        "font-medium text-[20px] sm:text-[24px] lg:text-[28px] leading-[1.35]",
     sectionHeadText:
-        "font-black md:text-[50px] sm:text-[40px] xs:text-[35px] text-[25px]",
+        "font-black text-[34px] sm:text-[44px] lg:text-[52px] leading-tight tracking-[-0.035em]",
     sectionSubText:
-        "sm:text-[16px] text-[12px] uppercase tracking-wider",
+        "text-[12px] sm:text-[13px] uppercase tracking-[0.2em] font-semibold",
 };
 
 export { styles };
